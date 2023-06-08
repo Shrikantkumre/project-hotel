@@ -25,6 +25,9 @@
     </nav>
 
     <section id="home">
+        <div class="time">
+            Day/Time: <span id="time1"></span>
+        </div>
         <h1 class="h-primary">Welcome to MyOnlineMeal</h1>
         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis dolorum numquam minus. </p>
         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. </p>
@@ -110,6 +113,16 @@
             Copyright &copy; www.myOnlineMeal.com. All rights reserved!
         </div>
     </footer>
+    <script>
+         function  displaytime(){
+    
+    time= new Date();
+    console.log(time);
+    document.getElementById('time1').innerHTML=time;
+    }
+    setInterval(displaytime ,1000);
+
+    </script>
 </body>
 
 </html>

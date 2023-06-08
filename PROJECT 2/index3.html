@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style type="text/css">
+    section{
+        border: 2px solid black;
+        width: 1000px;
+        height: 360px;
+        margin: 100px auto;
+        display: flex;
+        justify-content: space-around;
+        background-color: rgb(132, 164, 165);
+
+    }
+    
+    img
+    {
+        height: 100px;
+        width: 100px;
+
+    } 
+    h1{
+        text-align: center;
+
+    }
+    div{
+        border: 2px solid black;
+        width: 200px;
+        height:90%;
+        padding: 20px;
+        margin: 10px;
+        background: #000000;
+        box-sizing: border-box;
+        color: aliceblue;
+    }
+    p{
+        border: 2px solid black;
+        text-align: center;
+        justify-content: center;
+        background-color: rgb(113, 170, 214);
+        font-weight: bold;
+    }
+    .imgBox{
+    background-image: url('rp2.jpg');
+    position: relative;
+    top: 7px;
+    left: 5px;
+    height: 100px;
+    width: 100px;
+    cursor: pointer;
+}
+</style>
+<body bgcolor="yellow">
+    <h1>Drag and Drop</h1>
+    <section>
+        <div class="choice">
+            <h1>Container1</h1>
+            <p draggable="true">shrikant</p>
+            <p draggable="true">kumre</p>
+        
+            
+        </div>
+        <div class="choice">
+
+            <h1>Container2</h1>
+
+        </div>
+        
+    </section>
+</body>
+</html>
+<script type="text/javascript">
+    var p = document.getElementsByTagName('p');
+      var choice = document.getElementsByClassName('choice');
+      var dragItem = null;
+
+      for(var i of p)
+      {
+         i.addEventListener('dragstart', dragStart); 
+         i.addEventListener('dragend', dragEnd);
+      }
+      function dragStart()
+      {
+        dragItem=this;
+        setTimeout(() =>this.style.display  ="none",0); 
+      }
+      function dragEnd()
+      {
+        setTimeout(() =>this.style.display  ="block",0);
+        dragItem=null;
+
+      }
+      for( j  of choice)
+      {
+        j.addEventListener('dragover',dragOver);
+        j.addEventListener('dragenter',dragEnter);
+        j.addEventListener('dragleave',dragLeave);
+        j.addEventListener('drop',Drop);
+
+      }
+
+      function Drop()
+        {
+        this.append(dragItem);
+
+        }
+      function dragOver(e){
+e.preventDefault();
+      }
+      
+      function dragEnter(e){
+        e.preventDefault();
+    }
+
+    function dragLeave(){
+        
+    }
+
+  
+</script>
+</script>
